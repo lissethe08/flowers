@@ -1,86 +1,68 @@
 body {
   margin: 0;
   background: black;
-  font-family: 'Courier New', monospace;
-  color: white;
   text-align: center;
-  height: 100vh;
-  overflow: hidden;
+  font-family: sans-serif;
+  color: white;
 }
 
 .pantalla-inicial {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top:50%; left:50%;
+  transform: translate(-50%,-50%);
 }
 
 button {
-  margin-top: 20px;
-  padding: 10px 30px;
-  font-size: 1em;
-  background: transparent;
+  margin-top: 15px;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  background: none;
   border: 2px solid white;
-  border-radius: 30px;
   color: white;
+  border-radius: 30px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 button:hover {
-  background-color: white;
+  background: white;
   color: black;
 }
 
-.flores {
+.contenedor-flor, .flores {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.5);
+  top:50%; left:50%;
+  transform: translate(-50%,-50%);
 }
 
 .tallo {
-  width: 4px;
-  height: 150px;
+  width: 5px; height: 120px;
   background: #a020f0;
   margin: 0 auto;
-  animation: brillar 1.5s infinite alternate;
+  box-shadow: 0 0 10px #b030f0;
 }
 
 .hojas {
-  width: 10px;
-  height: 10px;
+  width: 20px; height: 10px;
   background: #b030f0;
   border-radius: 50%;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  animation: hojas 3s infinite alternate;
+  top: 110px; left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px #d66fff;
 }
 
-.pétalos {
-  width: 80px;
-  height: 80px;
+.petalos {
+  width: 100px; height: 100px;
   background: #d66fff;
   border-radius: 50%;
-  position: relative;
-  margin: 0 auto;
+  margin-top: 30px;
   box-shadow: 0 0 20px #ffb3ff;
-  animation: florecer 2s ease-in-out forwards;
+  opacity: 0;
+  transform: scale(0);
+  animation: florecer 1.5s forwards ease-out;
 }
 
 @keyframes florecer {
-  0% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes brillar {
-  from { box-shadow: 0 0 5px #a020f0; }
-  to { box-shadow: 0 0 20px #ff7fff; }
-}
-
-@keyframes hojas {
-  0% { transform: rotate(0deg) translate(-50%, -50%); }
-  100% { transform: rotate(360deg) translate(-50%, -50%); }
+  to { opacity:1; transform: scale(1); }
 }
