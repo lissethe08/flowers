@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  background: black;
+  font-family: 'Courier New', monospace;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pantalla-inicial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 1em;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+.flores {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.tallo {
+  width: 4px;
+  height: 150px;
+  background: #a020f0;
+  margin: 0 auto;
+  animation: brillar 1.5s infinite alternate;
+}
+
+.hojas {
+  width: 10px;
+  height: 10px;
+  background: #b030f0;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: hojas 3s infinite alternate;
+}
+
+.pétalos {
+  width: 80px;
+  height: 80px;
+  background: #d66fff;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 0 20px #ffb3ff;
+  animation: florecer 2s ease-in-out forwards;
+}
+
+@keyframes florecer {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes brillar {
+  from { box-shadow: 0 0 5px #a020f0; }
+  to { box-shadow: 0 0 20px #ff7fff; }
+}
+
+@keyframes hojas {
+  0% { transform: rotate(0deg) translate(-50%, -50%); }
+  100% { transform: rotate(360deg) translate(-50%, -50%); }
+}
